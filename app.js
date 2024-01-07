@@ -72,5 +72,13 @@ const AddLocalStorageCount=()=>{
 const countString=JSON.stringify(count);
 localStorage.setItem('count',countString);
 }
+
+
+const ClearCartButton=()=>{
+    localStorage.removeItem('count')
+     count=0;
+    const cartCount = document.getElementById('cart-count');
+    cartCount.innerText=0;
+}
 ShowPreviousCartToScreen();
 ShowPreviousCount();
