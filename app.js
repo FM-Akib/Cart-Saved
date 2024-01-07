@@ -48,4 +48,29 @@ const ShowPreviousCartToScreen=()=>{
     }
 
 }
+let count=0;
+
+const PreviousCount=()=>{
+    const previousCount=localStorage.getItem('count');
+    if(previousCount){
+        count=JSON.parse(previousCount);
+    }
+    return count;
+}
+const ShowPreviousCount=()=>{
+    count=PreviousCount();
+    const cartCount = document.getElementById('cart-count');
+    cartCount.innerText=count;
+}
+const AddButton=()=>{
+    count++;
+    const cartCount = document.getElementById('cart-count');
+    cartCount.innerText=count;
+    AddLocalStorageCount();
+}
+const AddLocalStorageCount=()=>{
+const countString=JSON.stringify(count);
+localStorage.setItem('count',countString);
+}
 ShowPreviousCartToScreen();
+ShowPreviousCount();

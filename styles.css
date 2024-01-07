@@ -36,3 +36,12 @@
     font-size: 30px;
     margin-left: 800px;
 }
+.cart-count{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+}
+#cart-count{
+    margin-right: 20px;
+}
